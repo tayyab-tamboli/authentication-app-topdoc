@@ -12,8 +12,13 @@ repositories {
 	mavenCentral()
 }
 
-dependencies {
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
 
+dependencies {
 	/**
 	 * Spring Boot Starter Dependencies
 	 */
@@ -25,13 +30,16 @@ dependencies {
 	/**
 	 * H2 In-Memory Database
 	 */
-	runtimeOnly group: 'com.h2database', name: 'h2', version: '1.4.200'
+    runtimeOnly group: 'com.h2database', name: 'h2', version: '1.4.200'
+    compile 'org.hibernate:hibernate-validator:6.2.0.Final'
 	/**
 	 *  Swagger API Documentation for REST API
 	 */
 	implementation group: 'io.springfox', name: 'springfox-boot-starter', version: '3.0.0'
 	implementation group: 'io.springfox', name: 'springfox-swagger-ui', version: '3.0.0'
 
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
 	/**
 	 * Junit Dependencies
 	 */

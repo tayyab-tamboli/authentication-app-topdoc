@@ -13,12 +13,28 @@ repositories {
 }
 
 dependencies {
+
+	/**
+	 * Spring Boot Starter Dependencies
+	 */
 	implementation 'org.springframework.boot:spring-boot-starter'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-devtools', version: '2.4.4'
+	/**
+	 * H2 In-Memory Database
+	 */
 	runtimeOnly group: 'com.h2database', name: 'h2', version: '1.4.200'
+	/**
+	 *  Swagger API Documentation for REST API
+	 */
+	implementation group: 'io.springfox', name: 'springfox-boot-starter', version: '3.0.0'
+	implementation group: 'io.springfox', name: 'springfox-swagger-ui', version: '3.0.0'
 
+	/**
+	 * Junit Dependencies
+	 */
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 

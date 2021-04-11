@@ -1,9 +1,7 @@
 package com.topdoc.exercise.authenticationapp.rest;
 
 import com.topdoc.exercise.authenticationapp.exception.UserException;
-import com.topdoc.exercise.authenticationapp.model.Response;
-import com.topdoc.exercise.authenticationapp.model.User;
-import com.topdoc.exercise.authenticationapp.model.UserResponse;
+import com.topdoc.exercise.authenticationapp.model.*;
 import com.topdoc.exercise.authenticationapp.services.IUserAppService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -34,13 +32,13 @@ public class UserAppRestController {
     }
 
     @PostMapping("/login")
-    public String login() {
-        return "TEST API IS RUNNING..";
+    public AuthenticatedUser login(@Valid @RequestBody UserLogin userLogin) throws UserException {
+        return userAppService.login(userLogin);
     }
 
     @PostMapping("/logout")
     public String logout() {
-        return "TEST API IS RUNNING..";
+        return "LOGGED OUT";
     }
 
     @GetMapping("/profile/{username}")

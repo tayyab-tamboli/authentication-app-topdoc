@@ -8,8 +8,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @SpringBootApplication
 public class AuthenticationAppApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(AuthenticationAppApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(AuthenticationAppApplication.class, args);
+    }
 
 }

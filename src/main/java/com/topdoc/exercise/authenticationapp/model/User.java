@@ -1,11 +1,13 @@
 package com.topdoc.exercise.authenticationapp.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotBlank;
 import java.util.Date;
 
@@ -16,6 +18,7 @@ import java.util.Date;
 @Data
 @NoArgsConstructor
 @Entity(name = "User")
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class User {
     @Id
     @NotBlank(message = "USERNAME IS MANDATORY")
@@ -30,5 +33,8 @@ public class User {
     //@NotBlank(message = "DATE OF BIRTH IS MANDATORY")
     private Date dob;
     private String address;
+    private boolean active;
+    @Transient
+    private String otpSessionId;
 
 }

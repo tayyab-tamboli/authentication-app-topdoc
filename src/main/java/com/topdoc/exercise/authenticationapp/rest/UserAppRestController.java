@@ -27,8 +27,9 @@ public class UserAppRestController {
     }
 
     @PostMapping("/authenticate")
-    public String authenticateUser() {
-        return "TEST API IS RUNNING..";
+    public UserResponse authenticateUser(@Valid @RequestBody UserOTPAuth otpAuth) throws UserException {
+        User authenticateUser = userAppService.authenticateUser(otpAuth);
+        return getResponseObject(authenticateUser, "USER AUTHENTICATED");
     }
 
     @PostMapping("/login")

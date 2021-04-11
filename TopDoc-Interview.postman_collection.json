@@ -1,0 +1,105 @@
+{
+	"variables": [],
+	"info": {
+		"name": "TopDoc-Interview",
+		"_postman_id": "b18be000-9bf2-1cdc-a16a-64d51224e466",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/user/register",
+			"request": {
+				"url": "http://localhost:9890/topdoc-app/api/v1/user/register",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"username\": \"tayyabt120\",\r\n\t\"password\": \"Password\",\r\n\t\"dob\": \"1995-11-07T10:57:35.836Z\",\r\n\t\"mobile\": \"7385470800\",\r\n\t\"name\": \"Tayyab Tamboli\",\r\n\t\"address\": \"Pune\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/user/authenticate",
+			"request": {
+				"url": "http://localhost:9890/topdoc-app/api/v1/user/authenticate",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"username\": \"tayyabt120\",\r\n\t\"otpSessionId\": \"cf38ddeb-8a5d-4c5c-887d-62fe47455658\",\r\n\t\"otpValue\": \"386757\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/user/login",
+			"request": {
+				"url": "http://localhost:9890/topdoc-app/api/v1/user/login",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"username\": \"tayyabt120\",\r\n\t\"password\": \"Password\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/user/profile/tayyabt120",
+			"request": {
+				"url": "http://localhost:9890/topdoc-app/api/v1/user/profile/tayyabt120",
+				"method": "GET",
+				"header": [
+					{
+						"key": "auth-token",
+						"value": "f1e09f7c-4b49-4019-a14c-82864e2c9d02",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/user/logout",
+			"request": {
+				"url": "http://localhost:9890/topdoc-app/api/v1/user/logout",
+				"method": "POST",
+				"header": [
+					{
+						"key": "auth-token",
+						"value": "f1e09f7c-4b49-4019-a14c-82864e2c9d02",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

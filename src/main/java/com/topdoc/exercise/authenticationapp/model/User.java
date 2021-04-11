@@ -9,6 +9,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Transient;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
 import java.util.Date;
 
 /**
@@ -30,7 +32,8 @@ public class User {
     private String name;
     @NotBlank(message = "MOBILE IS MANDATORY")
     private String mobile;
-    //@NotBlank(message = "DATE OF BIRTH IS MANDATORY")
+    @Past(message = "DATE OF BIRTH SHOULD BE FROM PAST")
+    @NotNull(message = "DATE OF BIRTH IS MANDATORY")
     private Date dob;
     private String address;
     private boolean active;
